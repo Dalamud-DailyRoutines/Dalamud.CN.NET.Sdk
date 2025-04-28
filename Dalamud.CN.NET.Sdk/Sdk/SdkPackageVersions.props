@@ -1,0 +1,9 @@
+<Project>
+
+<!-- Versions -->
+<PropertyGroup>
+    <PackageVersion_Dalamud_NET_Sdk>11.2.0</PackageVersion_Dalamud_NET_Sdk>
+    <PackageVersion_DalamudPackager>11.0.0</PackageVersion_DalamudPackager>
+</PropertyGroup>
+
+</Project>

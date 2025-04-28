@@ -8,10 +8,10 @@
     <Description>MSBuild .NET Sdk for Dalamud plugins.</Description>
     <Authors>XIVLauncher and Dalamud contributors</Authors>
 
-    <PackageId>Dalamud.NET.Sdk</PackageId>
+    <PackageId>Dalamud.CN.NET.Sdk</PackageId>
     <Version>$(PackageVersion_Dalamud_NET_Sdk)</Version>
     <PackageVersion>$(PackageVersion_Dalamud_NET_Sdk)</PackageVersion>
-    <RepositoryUrl>https://github.com/goatcorp/Dalamud.NET.Sdk</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Dalamud-DailyRoutines/Dalamud.CN.NET.Sdk</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageType>MSBuildSdk</PackageType>
     <PackageTags>MSBuildSdk</PackageTags>
@@ -21,6 +21,7 @@
     <!-- Exclude target framework from the package dependencies as we don't include the build output -->
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <RootNamespace>Dalamud.CN.NET.Sdk</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

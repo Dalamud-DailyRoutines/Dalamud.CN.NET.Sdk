@@ -3,10 +3,10 @@
 
   <!-- Fail the build if the folder at DalamudLibPath doesn't exist -->
   <Target Name="EnsureDalamudLibPathExists" BeforeTargets="BeforeBuild">
-    <Error Text="Dalamud.NET.Sdk: Dalamud installation not found at $(DalamudLibPath)" Condition="!Exists('$(DalamudLibPath)')" />
+    <Error Text="Dalamud.CN.NET.Sdk: Dalamud installation not found at $(DalamudLibPath)" Condition="!Exists('$(DalamudLibPath)')" />
   </Target>
 
   <Target Name="PrintRootPath" BeforeTargets="BeforeBuild">
-    <Message Text="Dalamud.NET.Sdk: root at $(DalamudLibPath)" Importance="high" />
+    <Message Text="Dalamud.CN.NET.Sdk: root at $(DalamudLibPath)" Importance="high" />
   </Target>
 </Project>
