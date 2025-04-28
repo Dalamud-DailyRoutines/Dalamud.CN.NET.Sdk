@@ -23,9 +23,15 @@
     <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
   </PropertyGroup>
 
+  <!-- Define default value for CN version -->
+  <PropertyGroup>
+    <Use_Dalamud_CN Condition="'$(Use_Dalamud_CN)' == ''">true</Use_Dalamud_CN>
+  </PropertyGroup>
+
   <!-- Resolve Dalamud installation, updated through XIVLauncher -->
   <PropertyGroup>
-    <DalamudLibPath Condition="$([MSBuild]::IsOSPlatform('Windows'))">$(appdata)\XIVLauncherCN\addon\Hooks\dev\</DalamudLibPath>
+    <DalamudLibPath Condition="$([MSBuild]::IsOSPlatform('Windows')) AND '$(Use_Dalamud_CN)' == 'true'">$(appdata)\XIVLauncherCN\addon\Hooks\dev\</DalamudLibPath>
+    <DalamudLibPath Condition="$([MSBuild]::IsOSPlatform('Windows')) AND '$(Use_Dalamud_CN)' != 'true'">$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
     <DalamudLibPath Condition="$([MSBuild]::IsOSPlatform('Linux'))">$(HOME)/.xlcore/dalamud/Hooks/dev/</DalamudLibPath>
     <DalamudLibPath Condition="$([MSBuild]::IsOSPlatform('OSX'))">$(HOME)/Library/Application Support/XIV on Mac/dalamud/Hooks/dev/</DalamudLibPath>
     <DalamudLibPath Condition="$(DALAMUD_HOME) != ''">$(DALAMUD_HOME)/</DalamudLibPath>
@@ -50,7 +56,7 @@
     <AssemblySearchPaths>$(AssemblySearchPaths);$(DalamudLibPath)</AssemblySearchPaths>
   </PropertyGroup>
 
-    <!-- Define default values for Dalamud-provided assembly reference inclusion -->
+  <!-- Define default values for Dalamud-provided assembly reference inclusion -->
   <PropertyGroup>
     <Use_DalamudPackager Condition="'$(Use_DalamudPackager)' == ''">true</Use_DalamudPackager>
 
@@ -73,6 +79,8 @@
     <Reference Include="Dalamud" Private="false" />
     <Reference Include="ImGui.NET" Private="false" />
     <Reference Include="ImGuiScene" Private="false" />
+    <Reference Include="PInvoke.User32" Private="false" />
+    <Reference Include="PInvoke.Windows.Core" Private="false" />
 
     <Reference Include="FFXIVClientStructs" Condition="'$(Use_Dalamud_FFXIVClientStructs)' == 'true'" Private="false" />
     <Reference Include="InteropGenerator.Runtime" Condition="'$(Use_Dalamud_FFXIVClientStructs)' == 'true'" Private="false" />
