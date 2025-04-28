@@ -38,7 +38,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
 
     <!-- Required for VS to force an x64 configuration into the Solution -->
     <Platforms>x64</Platforms>
