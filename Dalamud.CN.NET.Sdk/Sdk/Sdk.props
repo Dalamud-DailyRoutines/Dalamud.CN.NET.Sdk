@@ -81,8 +81,6 @@
     <Reference Include="Dalamud.Bindings.ImPlot" Private="false" />
     <Reference Include="Dalamud.Bindings.ImGuizmo" Private="false" />
     <Reference Include="ImGuiScene" Private="false" />
-    <Reference Include="PInvoke.User32" Private="false" />
-    <Reference Include="PInvoke.Windows.Core" Private="false" />
 
     <Reference Include="FFXIVClientStructs" Condition="'$(Use_Dalamud_FFXIVClientStructs)' == 'true'" Private="false" />
     <Reference Include="InteropGenerator.Runtime" Condition="'$(Use_Dalamud_FFXIVClientStructs)' == 'true'" Private="false" />
